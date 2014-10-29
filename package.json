@@ -1,0 +1,27 @@
+{
+  "name": "dashboard",
+  "version": "0.0.1",
+  "description": "Dashboard platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@stash.redtonic:7999/~carlos.villuendas/dashboard.git"
+  },
+  "keywords": [
+    "dashboard",
+    "kpi",
+    "realtime"
+  ],
+  "private": true,
+  "author": "DCP Services Team",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.1.0",
+    "express": "^4.9.7",
+    "nconf": "^0.6.9",
+    "swig": "^1.4.2"
+  }
+}
