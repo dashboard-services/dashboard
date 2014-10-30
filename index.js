@@ -20,7 +20,11 @@ require( 'require-fu' )(  __dirname + '/routers' )( app );
 
 var dirBase = path.join( __dirname, 'tiles' );
 
-tiles.mountAll( dirBase, app, function() {
+tiles.mountAll( dirBase, app, function(err) {
+	if (err) {
+		debug( 'Error mounting the tiles: %s', err );
+	}
+
 	app.listen( config.get( 'app:port' ), function() {
 		debug( 'Server listen in %d', config.get( 'app:port' ) );
 	} );
