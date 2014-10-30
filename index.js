@@ -4,7 +4,8 @@ var express = require( 'express' ),
 		config = require( './config' ),
 		swig = require( 'swig' ),
 		path = require( 'path' ),
-		tiles = require('./lib/tiles');
+		MountManager = require('./lib/tiles'),
+		mountManager = new MountManager( app );
 
 app.engine('tpl', swig.renderFile);
 app.set( 'views', __dirname + '/views' );
@@ -18,9 +19,7 @@ app.use( express.static( __dirname + '/public' ) );
 
 require( 'require-fu' )(  __dirname + '/routers' )( app );
 
-var dirBase = path.join( __dirname, 'tiles' );
-
-tiles.mountAll( dirBase, app, function(err) {
+mountManager.mountTiles( function(err) {
 	if (err) {
 		debug( 'Error mounting the tiles: %s', err );
 	}
@@ -29,4 +28,3 @@ tiles.mountAll( dirBase, app, function(err) {
 		debug( 'Server listen in %d', config.get( 'app:port' ) );
 	} );
 } );
-
