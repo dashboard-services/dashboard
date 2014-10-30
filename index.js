@@ -20,6 +20,14 @@ require( 'require-fu' )(  __dirname + '/routers' )( app );
 
 var dirBase = path.join( __dirname, 'tiles' );
 
+/*
+tiles.mountTileByGitURL( 'https://github.com/dashboard-services/hello-world.git', dirBase, app, function(){
+	app.listen( config.get( 'app:port' ), function() {
+		debug( 'Server listen in %d', config.get( 'app:port' ) );
+	} );
+} );
+*/
+
 tiles.mountAll( dirBase, app, function(err) {
 	if (err) {
 		debug( 'Error mounting the tiles: %s', err );
@@ -29,4 +37,3 @@ tiles.mountAll( dirBase, app, function(err) {
 		debug( 'Server listen in %d', config.get( 'app:port' ) );
 	} );
 } );
-
