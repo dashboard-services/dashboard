@@ -19,6 +19,14 @@ app.use( express.static( __dirname + '/public' ) );
 
 require( 'require-fu' )(  __dirname + '/routers' )( app );
 
+// Development Only
+// TODO: REMOVE THIS
+//mountManager.mountTileByGitURL( 'https://github.com/dashboard-services/hello-world.git', function(){
+//	app.listen( config.get( 'app:port' ), function() {
+//		debug( 'Server listen in %d', config.get( 'app:port' ) );
+//	} );
+//});
+
 mountManager.mountTiles( function(err) {
 	if (err) {
 		debug( 'Error mounting the tiles: %s', err );
