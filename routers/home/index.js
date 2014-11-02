@@ -1,6 +1,6 @@
 var debug = require( 'debug' )( 'dashboard:route:home' );
 
-module.exports = function( app ){
+module.exports = function( app, mountManager ){
 
 	/**
 	 * Home page
@@ -8,4 +8,14 @@ module.exports = function( app ){
 	app.get( '/', function( req, res, next ){
 		res.render( 'home', {title: 'Services', subtitle: 'dashboard'} );
 	} );
+
+    app.get( '/mount-tile', function( req, res, next ){
+        res.render( 'tile/mount', {title: 'Services', subtitle: 'dashboard'} );
+    } );
+
+    app.post( '/mount-tile', function( req, res, next ){
+        mountManager.mountTileByGitURL( req.body.repo_url, function(){
+            res.redirect( '/' );
+        });
+    } );
 };
