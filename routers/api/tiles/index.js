@@ -1,19 +1,21 @@
 var debug = require( 'debug' )( 'dashboard:route:api:tiles' ),
     path = require( 'path' ),
     fsHelper = require( './../../../lib/fs-helper' ),
-    dirBase = path.join( __dirname, '..', '..', '..', 'tiles' );
+		MountManager = require('./../../../lib/tiles'),
+    dirBase = path.join( __dirname, '..', '..', '..', 'tiles' ),
+		mountManager;
 
 module.exports = function( app ){
+
+	mountManager = MountManager.getInstance( app );
 
 	/**
    * List of tiles in the dashboard
 	 * */
 	app.get( '/api/tiles', function( req, res, next ){
-    fsHelper.tilesInsideFolder( dirBase, function( err, tiles ){
-      res.json( tiles.map( function( tile ){
-        return require( path.join( dirBase, tile, 'package' ) );
-      } ) );
-    } );
+		res.json( mountManager.tiles().map( function( tile ){
+			return tile["package"];
+		} ) );
 	} );
 
   /**

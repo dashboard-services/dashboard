@@ -5,7 +5,7 @@ var express = require( 'express' ),
 		swig = require( 'swig' ),
 		path = require( 'path' ),
 		MountManager = require('./lib/tiles'),
-		mountManager = new MountManager( app );
+		mountManager = MountManager.getInstance( app );
 
 app.engine('tpl', swig.renderFile);
 app.set( 'views', __dirname + '/views' );
