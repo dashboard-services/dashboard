@@ -19,8 +19,12 @@ var Dashboard = React.createClass({
 
 	render: function(){
 		var tilesList = this.state.tiles.map(function(tile){
+			var size = tile.size || "sm",
+				url = document.URL + 'tiles/' + tile.name;
+			;
+
 			return (
-				<Tile name={tile.name} />
+				<Tile name={tile.name} size={size} url={url} />
 			);
 		});
 
@@ -35,7 +39,9 @@ var Dashboard = React.createClass({
 var Tile = React.createClass({
 	render: function(){
 		return (
-			<div>Im the tile {this.props.name}!</div>
+			<div className={"col-" + this.props.size + "-2"} >
+				<iframe name={this.props.name} src={this.props.url} frameBorder="0"></iframe>
+			</div>
 		);
 	}
 });
