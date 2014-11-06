@@ -26,17 +26,18 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+							<form method="POST">
+							<label for="repo">
+									Git repo URL:
+							</label>
+							<input type="text" name="repo_url"/>
 
-            <div id="dashboard" class="row">
-                <form method="POST">
-                <label for="repo">
-                    Git repo URL:
-                </label>
-                <input type="text" name="repo_url"/>
+							<input type="submit" value="Upload" />
+							</form>
+						</div>
 
-                <input type="submit" value="Upload" />
-                </form>
-            </div>
+            <div id="dashboard" class="row"></div>
 
         </div>
 
