@@ -27,17 +27,34 @@
                 </div>
             </div>
             <div class="row">
-							<form method="POST">
-							<label for="repo">
-									Git repo URL:
-							</label>
-							<input type="text" name="repo_url"/>
+							<div class="col-md-8 col-md-offset-2">
 
-							<input type="submit" value="Upload" />
-							</form>
+								<form class="form-horizontal" role="form" method="POST">
+
+									<div class="form-group">
+										<label for="repo_url" class="col-sm-2 control-label">Email</label>
+										<div class="col-sm-10">
+											<input type="text" class="form-control" id="repo_url" placeholder="Ej.: https://github.com/dashboard-services/dashboard.git" name="repo_url">
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label for="settings" class="col-sm-2 control-label">Settings</label>
+										<div class="col-sm-10">
+											<textarea id="settings" name="settings" class="form-control" rows="3"></textarea>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<button type="submit" class="btn btn-default">Upload</button>
+										</div>
+									</div>
+
+								</form>
+
+							</div>
 						</div>
-
-            <div id="dashboard" class="row"></div>
 
         </div>
 
