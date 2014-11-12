@@ -14,7 +14,7 @@ module.exports = function( app, mountManager ){
     } );
 
     app.post( '/mount-tile', function( req, res, next ){
-        mountManager.mountTileByGitURL( req.body.repo_url, function(){
+        mountManager.mountTileByGitURL( req.body.repo_url, req.body.settings, function(){
             res.redirect( '/' );
         });
     } );
