@@ -31,19 +31,25 @@ Using docker as development system.
 Local installation steps
 ---
 clone this repo
-`> git clone  git@github.com:dashboard-services/dashboard.git`
+
+    $ git clone  git@github.com:dashboard-services/dashboard.git
 
 step inside
-`> cd dashboard`
+
+    $ cd dashboard
 
 install magic spells
-`> npm install`
+
+    $ npm install
 
 run the magic
-`> node .`
+
+    $ node .
 
 go to
-http://localhost:3000
+
+    http://localhost:3000
 
 for mounting tiles
-http://localhost:3000/mount-tile
+
+    http://localhost:3000/mount-tile
