@@ -48,8 +48,8 @@ run the magic
 
 go to
 
-http://localhost:3000
+[http://localhost:3000](http://localhost:3000)
 
 for mounting tiles
 
-http://localhost:3000/mount-tile
+[http://localhost:3000/mount-tile](http://localhost:3000/mount-tile)
