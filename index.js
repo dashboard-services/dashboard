@@ -10,7 +10,7 @@ var express = require( 'express' ),
 
 app.engine('tpl', swig.renderFile);
 app.set( 'views', __dirname + '/views' );
-app.set( 'view engine', 'tpl' );
+app.set( 'view engine', 'jade' );
 
 // Disabled Views cache
 app.set('view cache', false);

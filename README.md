@@ -26,3 +26,30 @@ Using docker as development system.
     $ docker build -t dashboard .
 
     $ docker run -it --rm --name dashboard dashboard
+
+
+Local installation steps
+---
+clone this repo
+
+    $ git clone  git@github.com:dashboard-services/dashboard.git
+
+step inside
+
+    $ cd dashboard
+
+install magic spells
+
+    $ npm install
+
+run the magic
+
+    $ node .
+
+go to
+
+[http://localhost:3000](http://localhost:3000)
+
+for mounting tiles
+
+[http://localhost:3000/mount-tile](http://localhost:3000/mount-tile)

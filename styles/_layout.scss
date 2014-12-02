@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16px;
+}
+body {
+    background-color: #E5E9EC;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-position: center top;
+    background-size: cover;
+    height: 100vh;
+}
+bold {
+    font-weight: 700;
+}
+.header {
+    & {
+        background-color: #FFFFFF;
+        padding: 10px 10px;
+        @include display(flex);
+        @include align-items(center);
+        @include flex-direction(row);
+        @include justify-content(space-between);
+    }
+    h1 {
+        & {
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.6em;
+            font-weight: 400;
+        }
+        span:last-child {
+            font-weight: 700;
+            padding-left: .3em;
+        }
+    }
+    .current_user {
+        @include display(flex);
+        @include align-items(center);
+        @include flex-direction(row);
+        @include justify-content(center);
+    }
+    .avatar {
+        & {
+
+        }
+        img {
+            border-radius: 50%;
+            height: 35px;
+            margin-left: 1em;
+        }
+    }
+    .name {
+        & {
+            font-size: 1.2em;
+        }
+        span:last-child {
+            font-weight: 700;
+            padding-left: .25em;
+        }
+    }
+}
+#dashboard {
+    & {
+        padding: 20px;
+    }
+    iframe {
+        & {
+            border: 5px solid #FFF;
+            border-radius: 3px;
+        }
+    }
+}
