@@ -27,5 +27,6 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
-# Dist version for client
+# Ignore gen files
 public/js/main.dist.js
+public/css
