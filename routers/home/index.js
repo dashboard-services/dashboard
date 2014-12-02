@@ -6,7 +6,9 @@ module.exports = function( app, mountManager ){
 	 * Home page
 	 * */
 	app.get( '/', function( req, res, next ){
-		res.render( 'home', {title: 'Services', subtitle: 'dashboard'} );
+		res.render(
+            'home'
+        );
 	} );
 
     app.get( '/mount-tile', function( req, res, next ){
@@ -18,4 +20,5 @@ module.exports = function( app, mountManager ){
             res.redirect( '/' );
         });
     } );
+
 };

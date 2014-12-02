@@ -1,3 +1,5 @@
+var bourbon = require('node-bourbon');
+
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -12,15 +14,37 @@ module.exports = function(grunt) {
 			}
 		},
 
+        sass: {
+            options: {
+                sourceMap: true,
+                outputStyle: 'compressed',
+                precision: 3,
+                includePaths: require('node-bourbon').includePaths
+            },
+            dist: {
+                files: {
+                    'public/css/main.css': 'styles/main.scss',
+                    'public/css/tile.css': 'styles/tile.scss'
+                }
+            }
+        },
+
 		watch: {
-			files: ['public/**/**/*.js', 'public/**/*.js', '!public/js/main.dist.js'],
-			tasks: ['browserify']
+            files: [
+                'public/**/**/*.js',
+                'public/**/*.js',
+                '!public/js/main.dist.js',
+                'styles/*.scss'
+            ],
+            tasks: ['browserify', 'sass', 'notify']
+        },
 		}
   });
 
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-sass');
 
-	grunt.registerTask('default', ['browserify']);
+    grunt.registerTask('default', ['sass', 'browserify']);
 };
 
