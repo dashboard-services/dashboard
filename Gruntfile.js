@@ -29,7 +29,7 @@ module.exports = function(grunt) {
             }
         },
 
-		watch: {
+	watch: {
             files: [
                 'public/**/**/*.js',
                 'public/**/*.js',
@@ -37,8 +37,7 @@ module.exports = function(grunt) {
                 'styles/*.scss'
             ],
             tasks: ['browserify', 'sass', 'notify']
-        },
-		}
+        }
   });
 
 	grunt.loadNpmTasks('grunt-browserify');
