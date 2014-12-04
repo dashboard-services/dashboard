@@ -26,6 +26,8 @@ Using docker as development system.
     $ docker build -t dashboard .
 
     $ docker run -it --rm --name dashboard dashboard
+    
+    $ docker run -d -P -e VIRTUAL_HOST=subdomain.domain.com --name dashboard dashboard
 
 
 Local installation steps
