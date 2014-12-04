@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+  head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      title Dashboard
+      link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
+      link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css')
+      link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Open+Sans:400,700')
+      link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Oswald:400,700')
+      link(rel='stylesheet', href='css/main.css')
+  body#body
+    header.header
+      h1
+        span Cuqui
+        span Dashboard
+      #user_info.current_user
+    .container-fluid
+     .row
+      .col-md-8.col-md-offset-2
+       form.form-horizontal(role='form', method='POST')
+        .form-group
+         label.col-sm-2.control-label(for='repo_url') Email
+         .col-sm-10
+          input#repo_url.form-control(type='text', placeholder='Ej.: https://github.com/dashboard-services/dashboard.git', name='repo_url')
+        .form-group
+         label.col-sm-2.control-label(for='settings') Settings
+         .col-sm-10
+          textarea#settings.form-control(name='settings', rows='3')
+        .form-group
+         .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Upload
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+
